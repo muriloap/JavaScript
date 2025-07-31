@@ -6,7 +6,8 @@ let prompt = require('prompt-sync')()
 // atividadeCNH()
 // exemploLogin()
 // exemploResposta()
-atividadeTimes()
+// atividadeTimes()
+// atividadeCrime()
 
 function exemploPagamento(){
 
@@ -80,5 +81,67 @@ function atividadeTimes(){
     }
     if (golsTime1 == golsTime2){
         console.log(`Placar:\n${golsTime1} x ${golsTime2}\nEMPATE `)
+    }
+}
+
+function atividadeCrime(){
+    let pontos = 0
+    console.log("===== INVESTIGAÇÃO CRIMINAL =====")
+    let telefonouVitima = parseInt(prompt("Telefonou para a vítima?\nSIM(1) NÃO(2): "))
+
+    if (telefonouVitima == 1){
+        pontos++
+    }
+    else if (telefonouVitima == 2){
+        pontos = pontos
+    }
+
+    let esteveLocal = parseInt(prompt("Esteve no local do crime?\nSIM(1) NÃO(2): "))
+    
+    if (esteveLocal == 1){
+        pontos++
+    }
+    else if (esteveLocal == 2){
+        pontos = pontos
+    }
+
+    let moraPerto = parseInt(prompt("Mora perto da vítima?\nSIM(1) NÃO(2): "))
+
+    if (moraPerto == 1){
+        pontos++
+    }
+    else if (moraPerto == 2){
+        pontos = pontos
+    }
+
+    let deviaVitima = parseInt(prompt("Devia para a vítima?\nSIM(1) NÃO(2): "))
+
+    if (deviaVitima == 1){
+        pontos++
+    }
+    else if (deviaVitima == 2){
+        pontos = pontos
+    }
+
+    let trabalhouComVitima = parseInt(prompt("Trabalhou com a vítima?\nSIM(1) NÃO(2): "))
+
+    if (trabalhouComVitima == 1){
+        pontos++
+    }
+    else if (trabalhouComVitima == 2){
+        pontos = pontos
+    }
+
+     if (pontos == 2){
+        console.log(`O sujeito obteve ${pontos} pontos e está classificado como "Suspeito(a)"`)
+    }
+    else if (pontos == 3 || pontos == 4){
+        console.log(`O sujeito obteve ${pontos} pontos e está classificado como "Cúmplice"`)
+    }
+    else if (pontos == 5){
+        console.log(`O sujeito obteve ${pontos} pontos e está classificado como "Assassino"`)
+    }
+    else {
+        console.log(`O sujeito obteve ${pontos} pontos e está classificado como "Inocente"`)
     }
 }
